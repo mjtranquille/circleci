@@ -8,12 +8,11 @@ jobs:
     steps:
       - checkout
       - run: echo 'This is the build step'
+      - run: 'node app.js'
   test:
-    docker:
-      - image: node
     steps:
       - checkout
-      - run: 'node app.js'
+      - run: 'curl http://localhost:3000'
 
 workflows:
   build_and_test:
