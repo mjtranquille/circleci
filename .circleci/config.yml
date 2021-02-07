@@ -8,3 +8,8 @@ jobs:
     steps:
       - checkout
       - run: echo 'This is the build step'
+  test:
+    docker:
+      - image: node
+    steps:
+      - run: 'node app.js'
