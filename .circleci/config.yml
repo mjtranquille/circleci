@@ -10,6 +10,8 @@ jobs:
       - run: echo 'This is the build step'
       - run: 'node app.js'
   test:
+    docker:
+      - image: alpine
     steps:
       - checkout
       - run: 'curl http://localhost:3000'
