@@ -8,13 +8,12 @@ jobs:
     steps:
       - checkout
       - run: echo 'This is the build step'
-      - run: 'node app.js'
   test:
     docker:
       - image: alpine
     steps:
       - checkout
-      - run: 'curl http://localhost:3000'
+      - run: echo 'This is the test step'
 
 workflows:
   build_and_test:
